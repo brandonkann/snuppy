@@ -1,0 +1,56 @@
+Pre-reqs to use:
+- Chrome
+- NodeJS
+- VSCode 
+- Git 
+
+Terminal uses "Bash" set as default
+General Extensions to install:
+- Prettier 
+- Eslint 
+- Color Bracket  
+- ES6 and ES7 React/Redux snippets 
+
+-D means all packages will be installed as development dependencies 
+
+tailwind classes:
+text-3xl = biggest font
+font-bold = bold 
+
+
+Layout is a wrapper to hold all components
+
+  "extends": ["eslint: recommended", "next/core-web-vitals"] 
+
+  - this is to spot errors
+
+min-h-screen : Sets the screen to full height
+
+flex-col: direction is vertically
+
+justify-between: add space between 
+
+h-12 creates 3 rem space
+
+px-4 horizontal padding
+ 
+shadow-md makes a cool line
+
+container = maxium width responsive
+
+rfc = react functional compoennt
+
+.card {
+  @apply mb-5 block rounded-lg border-gray-200 shadow-md;
+}
+
+@apply allows us to utilize tailwind classes in the global.css file
+
+grabbing product from url
+const { query } = useRouter();
+  const { slug } = query;
+
+    <div className='grid md:grid-cols-4 md:gap-3'>
+        <div className="mb:col-span-2">
+
+col-span-2 use two columns of the 4

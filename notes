@@ -54,3 +54,64 @@ const { query } = useRouter();
         <div className="mb:col-span-2">
 
 col-span-2 use two columns of the 4
+
+Steps to working on global state: 
+Handle Add to Cart:
+1. Define React Context
+2. Define Cart Items state
+3. Create addd to cart action
+4. Add Reducer
+5. Create store provider
+6. Handle add to cart button
+
+Steps to adding cart:
+1. create cart.js
+2. UseContext to get cartItems
+3. List items in cart items 
+4. Redirect to cart screen after add to cart 
+
+Updating items in the cart:
+1. Add Select Box for quantity
+2. Handle Select box change 
+
+Saving Cart Items as Cookies:
+1. install js-cookie package
+2. save and retreieve cart items in cookies 
+
+Note Hydration Error:
+- Reason: initialUI does not match what was rendered in the server 
+- Application reason, when adding the cookies to the page the Server: the cookies contain no items in the cart, the client has cookies though.
+- To fix this render the screen as a "Client Side Component" 
+  - Use nextjs Dynamic, remove export default
+  - add the end of the component:
+  export default dynamic(() => Promise.resolve(CartScreen), {ssr: false}) 
+  - Ensure to update eslintc.json by adding "env"
+  - env" : {"browser": true, "node" : true, "es6": true},
+
+Creating Login Form:
+1. Install React-hook form 
+2. Create input boxes
+3. Add login buttons 
+
+router.push('login?/redirect=/shipping')}
+
+Connecting to MongoDB: 
+1. install mongoose
+2. install mongodb or use mongodb atlas 
+3. save connection url in .env file 
+4. Create DB Utils file
+5. Create sample users 
+
+Login API: 
+1. Install next-auth
+2. create nextauth.js
+3. Implement Sign in 
+4. Use sign in login form 
+
+Every request for signin, signout, and checking authentication is redirect to [...nextAuth].js
+
+Add User Menu 
+1. check user authentication
+2. Install headlessui
+3. show user menu
+headlessUI

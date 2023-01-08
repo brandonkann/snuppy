@@ -96,6 +96,24 @@ export default function ShippingScreen() {
           {errors.city && (
             <div className="text-red-500">{errors.city.message}</div>
           )}
+
+          
+        </div>
+        <div className="mb-4">
+          <label htmlFor="postalCode">Postal Code</label>
+          <input
+            className="w-full"
+            id="postalCode"
+            autoFocus
+            {...register('postalCode', {
+              required: 'Please enter Postal Code',
+            })}
+          />
+          {errors.postalCode && (
+            <div className="text-red-500">{errors.postalCode.message}</div>
+          )}
+
+          
         </div>
         <div className="mb-4">
           <label htmlFor="country">Country</label>

@@ -115,3 +115,12 @@ Add User Menu
 2. Install headlessui
 3. show user menu
 headlessUI
+
+Creating shipping Screen 
+1. display address fields
+2. Save address in context 
+flex flex-wrap will show items in separate rows 
+
+Creating Payment method screen 
+1. display payment methods
+2. Save payment method in context

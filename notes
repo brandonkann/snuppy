@@ -140,3 +140,8 @@ Create Place Order Screen:
 2. Display payment method
 3. display order items
 4. implement create order 
+
+Create order screen: 
+1. Implement backend api for order dtails
+2. load order data from backend 
+3. display order details 

@@ -17,7 +17,7 @@ const data = {
   ],
   products: [
     {
-      name: 'free shirt',
+      name: 'Nice shirt',
       slug: 'free-shirt',
       category: 'shirts',
       image: '/images/shirt1.jpg',
@@ -29,7 +29,7 @@ const data = {
       description: 'A popular shirt',
     },
     {
-      name: 'Fit shirt',
+      name: 'Slim shirt',
       slug: 'fit-shirt',
       category: 'shirts',
       image: '/images/shirt2.jpg',

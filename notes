@@ -166,3 +166,8 @@ Update user profile:
 1. create profile screen
 2. show user info
 3. handle update user info 
+
+Adding a Carousel slideshow:
+1. Create featured product
+2. feed carousel data
+3. Show popular products 

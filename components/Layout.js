@@ -44,7 +44,7 @@ export default function Layout({ title, children }) {
   <div class="container flex flex-wrap items-center justify-between mx-auto">
     <a href="https://flowbite.com/" class="flex items-center">
         {/* <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" /> */}
-        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Snuppy</span>
+        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Fort Balance Inc</span>
     </a>
     <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
       <span class="sr-only">Open main menu</span>
@@ -62,8 +62,7 @@ export default function Layout({ title, children }) {
           <Link href="/contact" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</Link>
         </li>
        <li>
-       <div> 
-                <Link classNamsnowe="p-2" href="/cart">
+                <Link className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" href="/cart">
                   Cart
                   {cartItemsCount > 0 && (
                     <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
@@ -71,6 +70,7 @@ export default function Layout({ title, children }) {
                     </span>
                   )}
                 </Link>
+                </li>
                 {status === 'loading' ? (
                   'Loading'
                 ) : session?.user ? (
@@ -96,8 +96,8 @@ export default function Layout({ title, children }) {
                     Login
                   </Link>
                 )}
-              </div>
-       </li>
+              
+      
       </ul>
     </div>
   </div>
@@ -107,7 +107,7 @@ export default function Layout({ title, children }) {
           </header>
           <main className="container m-auto mt-4 px-4">{children}</main>
           <footer className="flex h-10 shadow-inner justify-center items-center">
-            Copyright &copy 2022 Snuppy
+            Copyright &copy; 2022 Snuppy
           </footer>
         </div>
       </div>

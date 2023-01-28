@@ -7,8 +7,12 @@ import Product from '../models/Product';
 import db from '../utils/db';
 import { Store } from '../utils/Store';
 import Hero from '../components/Hero';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import Link from 'next/link';
+import Image from 'next/image';
 
-export default function Home({ products }) {
+export default function Home({ products, featuredProducts }) {
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
 
@@ -29,6 +33,16 @@ export default function Home({ products }) {
   return (
     <>
       <Layout title="Home Page">
+        <Carousel showThumbs={false} autoPlay>
+        {featuredProducts.map((product) => (
+          <div key = {product._id}>
+            <Link className='flex' href = {`/product/${product.slug}`} passHref>
+            <img src = {product.banner} alt={product.name} />
+            </Link>
+          </div>
+        ))}
+        </Carousel>
+        <h2 className='h2 my-4'>Latest Products</h2>
         <Hero />
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
           {products.map((product) => (
@@ -40,6 +54,7 @@ export default function Home({ products }) {
           ))}
         </div>
       </Layout>
+
     </>
   );
 }
@@ -48,8 +63,10 @@ export default function Home({ products }) {
 export async function getServerSideProps() {
   await db.connect();
   const products = await Product.find().lean();
+  const featuredProducts = await Product.find({isFeatured: true}).lean();
   return {
     props: {
+      featuredProducts: featuredProducts.map(db.convertDocToObj),
       products: products.map(db.convertDocToObj),
     },
   };

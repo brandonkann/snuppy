@@ -34,7 +34,7 @@ export default function ContactForm() {
     
           const { error } = await res.json();
           if (error) {
-            toast.error(error.error);
+            toast.error(error);
             setButtonText("Send");
             return;
           }

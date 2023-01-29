@@ -10,6 +10,7 @@ import Hero from '../components/Hero';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import Link from 'next/link';
+import ContactForm from '../components/ContactForm';
 
 
 export default function Home({ products, featuredProducts }) {
@@ -53,6 +54,8 @@ export default function Home({ products, featuredProducts }) {
             ></ProductItem>
           ))}
         </div>
+
+        < ContactForm/>
       </Layout>
 
     </>

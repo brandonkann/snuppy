@@ -9,12 +9,14 @@ import { getError } from '../utils/error';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import { useSession } from 'next-auth/react';
 
 export default function PlaceOrderScreen() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
   const { cartItems, shippingAddress, paymentMethod } = cart;
+  const { data: session } = useSession();
 
   const round2 = (num) => Math.round(num * 100 + Number.EPSILON) / 100;
   const itemsPrice = round2(
@@ -36,7 +38,7 @@ export default function PlaceOrderScreen() {
   const placeOrderHandler = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.post('/api/orders', {
+      const data = await axios.post('/api/orders', {
         orderItems: cartItems,
         shippingAddress,
         paymentMethod,
@@ -45,7 +47,22 @@ export default function PlaceOrderScreen() {
         taxPrice,
         totalPrice,
       });
+
+      let data1 = await axios.post('/api/sendgridorder', {
+        orderItems: cartItems,
+        user: session.user.email,
+        shippingAddress,
+        paymentMethod,
+        itemsPrice,
+        shippingPrice,
+        taxPrice,
+        totalPrice,
+      });
+
+      const values = await Promise.all([data, data1]);
+
       setLoading(false);
+
       dispatch({ type: 'CART_CLEAR_ITEMS' });
       Cookies.set(
         'cart',
@@ -54,7 +71,8 @@ export default function PlaceOrderScreen() {
           cartItems: [],
         })
       );
-      router.push(`/order/${data._id}`);
+
+      router.push(`/order/${values[0].data._id}`);
     } catch (err) {
       setLoading(false);
       toast.error(getError(err));

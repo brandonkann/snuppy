@@ -224,7 +224,9 @@ function OrderScreen() {
                   <li>
                     {isPending ? (
                       <div>Loading</div>
-                    ) : (
+                    ) : paymentMethod === 'PayPal' ? 
+                    ( 
+                      
                       <div className="w-full">
                         <PayPalButtons
                           createOrder={createOrder}
@@ -232,6 +234,14 @@ function OrderScreen() {
                           onError={onError}
                         ></PayPalButtons>
                       </div>
+                    ) : (
+                      <div className="card px-5 py-4">
+                      <h1 className='text-xl'>E-transfer details:</h1>
+
+                      <h1 className='font-bold'>Email:</h1><h1>fortbalance@gmail.com</h1>
+                      <h1 className='font-bold'>E-transfer Password if prompted:</h1><h1>{order._id} </h1>
+                      
+                    </div>
                     )}
                     {loadingPay && <div>Loading...</div>}
                   </li>

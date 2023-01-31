@@ -59,7 +59,7 @@ export default function PlaceOrderScreen() {
         totalPrice,
       });
 
-      const values = await Promise.all([data, data1]);
+      
 
       setLoading(false);
 
@@ -71,6 +71,8 @@ export default function PlaceOrderScreen() {
           cartItems: [],
         })
       );
+
+      const values = await Promise.all([data, data1]);
 
       router.push(`/order/${values[0].data._id}`);
     } catch (err) {

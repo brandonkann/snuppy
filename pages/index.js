@@ -11,6 +11,8 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import Link from 'next/link';
 import ContactForm from '../components/ContactForm';
+import About from '../components/About';
+import Footer from '../components/Footer';
 
 
 export default function Home({ products, featuredProducts }) {
@@ -54,8 +56,9 @@ export default function Home({ products, featuredProducts }) {
             ></ProductItem>
           ))}
         </div>
-
+        <About />
         < ContactForm/>
+        <Footer /> 
       </Layout>
 
     </>

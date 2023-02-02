@@ -36,7 +36,9 @@ export default function Home({ products, featuredProducts }) {
   return (
     <>
       <Layout title="Home Page">
+        < Hero />
         <Carousel showThumbs={false} autoPlay>
+        
         {featuredProducts.map((product) => (
           <div key = {product._id}>
             <Link className='flex' href = {`/product/${product.slug}`} passHref>
@@ -46,7 +48,6 @@ export default function Home({ products, featuredProducts }) {
         ))}
         </Carousel>
         <h2 className='h2 my-4'>Latest Products</h2>
-        <Hero />
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
           {products.map((product) => (
             <ProductItem

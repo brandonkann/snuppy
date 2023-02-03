@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <>
       <div class="dark:bg-gray-900">
-        <div class="flex flex-col lg:flex-row items-stretch justify-between lg:px-0 px-6 lg:py-20 py-8 2xl:mx-auto 2xl:container">
+        <div class="flex flex-col lg:flex-row items-stretch justify-between lg:px-0 px-6 lg:py-2 py- 2xl:mx-auto 2xl:container">
           <div class="z-30 relative lg:w-1/2">
             <div class="hidden dark:bg-gray-800 bg-gray-100 w-full lg:w-10/12 lg:h-full lg:flex justify-end items-center">
               <div class="w-full lg:w-auto lg:-mr-32">

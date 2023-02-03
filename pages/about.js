@@ -1,8 +1,9 @@
 import React from 'react';
+import Layout from '../components/Layout';
 
 export default function AboutScreen() {
   return (
-    <div>
+    <Layout title="Our Team">
       <div class="container flex justify-center mx-auto pt-16">
         <div>
           <p class="text-gray-500 dark:text-gray-200 text-lg text-center font-normal pb-3">
@@ -358,6 +359,6 @@ export default function AboutScreen() {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }

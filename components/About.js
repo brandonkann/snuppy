@@ -8,7 +8,7 @@ export default function About() {
                 <div className="flex md:flex-row flex-col-reverse md:items-stretch items-center justify-center">
                     <div className="md:py-20 xl:w-1/2 sm:w-1/2 lg:mr-20 md:mr-6 flex flex-col md:items-end items-center justify-center xl:mr-28">
                         <div className="flex flex-col items-center justify-center">
-                            <h1 className="md:text-5xl text-3xl font-bold text-center text-gray-800">Wild Goose Chase</h1>
+                            <h1 className="md:text-5xl text-3xl font-bold text-center text-gray-800">Fort balance</h1>
                             <p className="sm:w-96 w-full mt-6 text-base leading-6 text-center text-gray-600">A phrase is a short selection of words which when put together create a concept.</p>
                             <div className="md:mt-14 mt-12 flex flex-col items-center">
                                 <div className="w-20 h-20 bg-white shadow rounded-full flex items-center justify-center" role="img" aria-label="money">

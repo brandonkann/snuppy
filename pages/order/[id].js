@@ -153,7 +153,7 @@ function OrderScreen() {
             </div>
 
             <div className="card overflow-x-auto p-5">
-              <h2 className="mb-2 text-lg">Order Items</h2>
+              <h2 className="mb-2 text-lg">Classes Ordered</h2>
               <table className="min-w-full">
                 <thead className="border-b">
                   <tr>

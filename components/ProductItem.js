@@ -12,7 +12,7 @@ export default function ProductItem({ product, addToCartHandler }) {
           className="rounded shadow"
         />
       </Link>
-      <div className="flex flex-col items-center justify-center p-5">
+      <div className="flex flex-col items-center justify-center p-5 bg-gray-100">
         <Link href={`/product/${product.slug}`}>
           <h2 className="text-lg">{product.name}</h2>
         </Link>

@@ -35,6 +35,7 @@ export default function Home({ products, featuredProducts }) {
     <>
       <Layout title="Home Page">
         < Hero />
+
         <Carousel showThumbs={false} autoPlay>
         
         {featuredProducts.map((product) => (
@@ -45,7 +46,7 @@ export default function Home({ products, featuredProducts }) {
           </div>
         ))}
         </Carousel>
-        <h2 className='h2 my-4'>Latest Products</h2>
+        <h2 className='h1 text-2xl py-9 font-bold text-center font-semibold text-gray-800 capitalize'>Our Courses</h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
           {products.map((product) => (
             <ProductItem

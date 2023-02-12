@@ -3,7 +3,7 @@ import React from 'react';
 export default function Hero() {
   return (
     <>
-      <div class="dark:bg-gray-900">
+      <div class="dark:bg-gray-900 pb-9">
         <div class="flex flex-col lg:flex-row items-stretch justify-between lg:px-0 px-6 lg:py-1 2xl:mx-auto 2xl:container">
           <div class="z-30 relative lg:w-1/2">
             <div class="hidden dark:bg-gray-800 bg-gray-100 w-full lg:w-10/12 lg:h-full lg:flex justify-end items-center">

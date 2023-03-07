@@ -25,7 +25,7 @@ export default function Layout({ title, children }) {
           <main className="container m-auto mt-4 px-4">{children}</main>
           < Footer />
           <footer className="flex h-10 shadow-inner justify-center items-center">
-            Copyright &copy; 2022 Snuppy
+            Copyright &copy; 2023 Fort Balance Inc. 
           </footer>
         </div>
       </div>

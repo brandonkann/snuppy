@@ -44,7 +44,7 @@ function CartScreen() {
               <thead className="border-b">
                 <tr>
                   <th className="px-5 text-left">Item</th>
-                  <th className="px-5 text-right">Quantity</th>
+                  <th className="px-5 text-right">Number of Classes</th>
                   <th className="px-5 text-right">Price</th>
                   <th className="px-5">Action</th>
                 </tr>

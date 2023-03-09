@@ -71,6 +71,11 @@ export default function NavBar() {
                     Support
                   </a>
                 </li>
+                <li>
+                  {session?.user ? (
+                    <Link href="/sessions">My Sessions</Link>
+                  ) : (<br></br>)}
+                </li>
               </ul>
               <div className="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
                 {status === 'loading' ? (

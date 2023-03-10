@@ -71,6 +71,53 @@ const data = {
     },
 
   ],
+  sessions : [
+    {
+      student: "Shepherd",
+      subject: "math",
+      price: 948,
+      date: "2023-04-12",
+      sessionNotes: "PLASMOSIS",
+      isPaid: false,
+      age: 6
+    },
+    {
+      student: "Shana",
+      subject: "science",
+      price: 453,
+      date: "2023-04-15",
+      sessionNotes: "ISOTERNIA",
+      isPaid: false,
+      age: 19
+    },
+    {
+      student: "Guthrie",
+      subject: "math",
+      price: 562,
+      date: "2023-04-20",
+      sessionNotes: "DEMINIMUM",
+      isPaid: true,
+      age: 15
+    },
+    {
+      student: "Linda",
+      subject: "math",
+      price: 947,
+      date: "2023-04-1",
+      sessionNotes: "FIREWAX",
+      isPaid: true,
+      age: 17
+    },
+    {
+      student: "Terri",
+      subject: "math",
+      price: 839,
+      date: "2023-04-3",
+      sessionNotes: "EMTRAC",
+      isPaid: true,
+      age: 6
+    }
+  ]
 };
 
 export default data;

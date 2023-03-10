@@ -1,13 +1,33 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import Link from 'next/link';
+import FullCalendar from '@fullcalendar/react';
+import daygrid from '@fullcalendar/daygrid';
+import interaction from '@fullcalendar/interaction';
+import db from '../utils/db';
+import Session from '../models/Session';
 
-export default function SessionsScreen() {
+export default function SessionsScreen({sessions}) {
+  console.log(sessions)
     const orders = [
 
     ]
+
+  
+    const handleDateClick = (args) => {
+      alert(args.dateStr)
+    }
   return (
     <Layout>
+      <FullCalendar plugins={[daygrid, interaction]}
+      initialView="dayGridMonth"
+      weekends={true}
+      events={[
+        {title: 'Calebs Tutoring Class', date:'2023-03-11'},
+        {title: 'Calebs Tutoring Class', date:'2023-03-15'},
+      ]}
+     
+      dateClick= {handleDateClick}/>
       <div className="overflow-x-auto">
         <table className="min-w-full">
           <thead className="border-b">
@@ -49,4 +69,14 @@ export default function SessionsScreen() {
       </div>
     </Layout>
   );
+}
+
+export async function getServerSideProps() {
+  await db.connect();
+  const sessions = await Session.find({}).lean();
+  return {
+    props: {
+      sessions: sessions.map(db.convertDocToObj),
+    },
+  };
 }

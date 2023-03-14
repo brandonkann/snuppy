@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import Link from 'next/link';
 import FullCalendar from '@fullcalendar/react';
@@ -6,8 +6,15 @@ import daygrid from '@fullcalendar/daygrid';
 import interaction from '@fullcalendar/interaction';
 import db from '../utils/db';
 import Session from '../models/Session';
+import Pagination from '../components/Pagination';
 
 export default function SessionsScreen({sessions, calendarSessions})  {
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 10;
+
+  const onPageChange = (page) => {
+    setCurrentPage(page)
+  }
     console.log(sessions)
   const order = []
 
@@ -18,6 +25,7 @@ export default function SessionsScreen({sessions, calendarSessions})  {
   return (
     <Layout>
       <FullCalendar plugins={[daygrid, interaction]}
+      height={500}
       initialView="dayGridMonth"
       weekends={true}
       events={
@@ -38,6 +46,8 @@ export default function SessionsScreen({sessions, calendarSessions})  {
           </thead>
 
           <tbody>
+
+            
             {sessions.map((session) => (
               <tr key={order._id} className="border-b">
                 <td className="p-5">{session.student}</td>
@@ -64,6 +74,12 @@ export default function SessionsScreen({sessions, calendarSessions})  {
             ))}
           </tbody>
         </table>
+        <Pagination
+       items={sessions.length} // 100
+       currentPage={currentPage} // 1
+       pageSize={pageSize} // 10
+       onPageChange={onPageChange}
+        />
       </div>
     </Layout>
   );
